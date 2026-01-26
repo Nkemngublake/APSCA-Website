@@ -2,11 +2,11 @@
 const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
 const mobileNav = document.querySelector('.mobile-nav');
 
-mobileMenuBtn.addEventListener('click', () => {
-  mobileNav.classList.toggle('active');
-  const bars = mobileMenuBtn.querySelectorAll('.bar');
-  // Simple animation for hamburger to X could be added here
-});
+if (mobileMenuBtn) {
+  mobileMenuBtn.addEventListener('click', () => {
+    mobileNav.classList.toggle('active');
+  });
+}
 
 // Close mobile menu when clicking a link
 document.querySelectorAll('.mobile-nav a').forEach(link => {
@@ -34,7 +34,7 @@ document.querySelectorAll('.fade-in-up').forEach(el => {
   observer.observe(el);
 });
 
-// Smooth Scroll for Anchor Links (optional if CSS scroll-behavior is not enough)
+// Smooth Scroll for Anchor Links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
     e.preventDefault();
@@ -95,60 +95,60 @@ if (jobsContainer) {
         </div>
         <p class="job-description">${job.description}</p>
       </div>
-      <button class="btn-secondary apply-btn" data-job-id="${job.id}" data-job-title="${job.title}">Postuler</button>
+      <button class="btn-primary apply-btn" data-job-id="${job.id}" data-job-title="${job.title}">Postuler</button>
     `;
     jobsContainer.appendChild(jobCard);
   });
 }
 
-// Modal Logic
-const modal = document.getElementById('application-modal');
-const closeModalBtn = document.querySelector('.close-modal');
-const modalTitle = document.getElementById('modal-job-title');
+// Modal Logic for Recruitment
+const recruitmentModal = document.getElementById('application-modal');
+const closeRecruitmentBtn = document.querySelector('#application-modal .close-modal');
+const modalRecruitmentTitle = document.getElementById('modal-job-title');
 const applicationForm = document.getElementById('application-form');
 
-if (modal) {
-  // Open Modal
+if (recruitmentModal) {
   document.addEventListener('click', (e) => {
     if (e.target.classList.contains('apply-btn')) {
       const jobTitle = e.target.getAttribute('data-job-title');
-      modalTitle.textContent = `Postuler pour : ${jobTitle}`;
-      modal.classList.add('show');
-      document.body.style.overflow = 'hidden'; // Prevent background scrolling
+      modalRecruitmentTitle.textContent = `Postuler pour : ${jobTitle}`;
+      recruitmentModal.classList.add('show');
+      document.body.style.overflow = 'hidden';
     }
   });
 
-  // Close Modal
-  const closeModal = () => {
-    modal.classList.remove('show');
+  const closeRecModal = () => {
+    recruitmentModal.classList.remove('show');
     document.body.style.overflow = 'auto';
   };
 
-  closeModalBtn.addEventListener('click', closeModal);
+  if (closeRecruitmentBtn) {
+    closeRecruitmentBtn.addEventListener('click', closeRecModal);
+  }
 
   window.addEventListener('click', (e) => {
-    if (e.target === modal) {
-      closeModal();
+    if (e.target === recruitmentModal) {
+      closeRecModal();
     }
   });
 
-  // Handle Form Submission
-  applicationForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    // Simulate API call
-    const btn = applicationForm.querySelector('button[type="submit"]');
-    const originalText = btn.textContent;
-    btn.textContent = 'Envoi en cours...';
-    btn.disabled = true;
+  if (applicationForm) {
+    applicationForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const btn = applicationForm.querySelector('button[type="submit"]');
+      const originalText = btn.textContent;
+      btn.textContent = 'Envoi en cours...';
+      btn.disabled = true;
 
-    setTimeout(() => {
-      alert('Votre candidature a été envoyée avec succès !');
-      applicationForm.reset();
-      closeModal();
-      btn.textContent = originalText;
-      btn.disabled = false;
-    }, 1500);
-  });
+      setTimeout(() => {
+        alert('Votre candidature a été envoyée avec succès !');
+        applicationForm.reset();
+        closeRecModal();
+        btn.textContent = originalText;
+        btn.disabled = false;
+      }, 1500);
+    });
+  }
 }
 
 // Projects Data
@@ -160,7 +160,7 @@ const projects = [
     status: "Terminé",
     date: "2023",
     image: "/images/project1.png",
-    description: "Déploiement d'une stratégie nationale de prévention ciblée. Sensibilisation de plus de 50 000 bénéficiaires en zones rurales à travers des causeries éducatives et la distribution de 100 000 kits de prévention. Collaboration étroite avec les leaders communautaires pour briser la stigmatisation."
+    description: "APSCA a mené une vaste campagne nationale visant à réduire les nouvelles infections par le VIH au Cameroun. Le projet s'est concentré sur les zones rurales mal desservies, où l'accès à l'information est limité. Nos équipes ont organisé des sessions de sensibilisation interactives dans plus de 200 villages, touchant directement 50 000 personnes.\n\nAu-delà de l'éducation, nous avons distribué 100 000 kits de prévention et facilité le dépistage volontaire pour des milliers de citoyens. Ce projet a été réalisé en partenariat avec le Ministère de la Santé Publique et a permis de renforcer le leadership communautaire dans la lutte contre la stigmatisation associée au virus."
   },
   {
     id: 2,
@@ -169,7 +169,7 @@ const projects = [
     status: "En Cours",
     date: "2024 - 2025",
     image: "/images/project_training.png",
-    description: "Programme intensif de formation et de supervision formative pour 200 Agents de Santé Communautaire (ASC). Modules axés sur la prise en charge intégrée des maladies de l'enfant (PCIME) communautaire, la surveillance épidémiologique et l'utilisation des outils de collecte de données numériques."
+    description: "Le renforcement du système de santé passe par des acteurs communautaires compétents. Ce programme ambitieux forme 200 Agents de Santé Communautaire (ASC) aux pratiques modernes de soins primaires.\n\nLa formation couvre la prise en charge intégrée des maladies de l'enfant (PCIME), le suivi nutritionnel et la surveillance épidémiologique. Nous intégrons également des outils numériques pour la collecte de données en temps réel, permettant une réponse plus rapide aux alertes sanitaires locales. Chaque ASC bénéficie d'un mentorat continu et de supervisions formatives régulières pour garantir la qualité des interventions."
   },
   {
     id: 3,
@@ -178,7 +178,7 @@ const projects = [
     status: "En Cours",
     date: "Mai - Déc 2025",
     image: "/images/project_c19rm_final.png",
-    description: "Mise en œuvre du volet communautaire du C19RM : Renforcement du Système de Santé (RSS) et Suivi Dirigé par la Communauté (CLM) dans les districts sanitaires d'Odza, Biyem Assi et Efoulan. Budget alloué : 9,4M FCFA. Objectif : Améliorer la qualité des services par le retour d'information des usagers."
+    description: "Le projet C19RM (COVID-19 Response Mechanism) vise à renforcer la résilience du système de santé camerounais face aux pandémies. APSCA déploie un volet crucial de Suivi Dirigé par la Communauté (CLM) dans les districts d'Odza, Biyem Assi et Efoulan.\n\nEn recueillant systématiquement les retours des usagers sur la qualité des soins, nous identifions les goulots d'étranglement et plaidons pour des améliorations structurelles. Ce dispositif permet de pérenniser les acquis en matière de gouvernance sanitaire participative, assurant que les besoins des communautés sont au cœur des décisions de santé publique."
   },
   {
     id: 4,
@@ -187,7 +187,7 @@ const projects = [
     status: "Terminé",
     date: "2022",
     image: "/images/project_tablet.png",
-    description: "Mise en place d'un réseau de dépistage actif de la tuberculose. Identification et mise sous traitement de 500 cas confirmés dans la région du Centre. Suivi rigoureux de l'observance thérapeutique (DOTS) et soutien nutritionnel aux patients vulnérables pour réduire les taux d'abandon."
+    description: "Ce programme a ciblé l'identification précoce et le traitement rigoureux de la tuberculose dans la région du Centre. Face à un taux élevé de perdus de vue, APSCA a mis en place un réseau de dépistage actif combinant cliniques mobiles et visites à domicile.\n\nSur 500 cas confirmés, un taux de réussite thérapeutique de 95% a été atteint grâce à l'implémentation stricte de la stratégie DOTS (Directly Observed Treatment Short-course). Le projet a également fourni un soutien nutritionnel et psychologique essentiel aux patients, réduisant considérablement les abandons de traitement."
   }
 ];
 
@@ -211,7 +211,7 @@ if (projectsContainer) {
         <p class="project-description">${project.description}</p>
         <div class="project-footer">
           <span class="project-date">📅 ${project.date}</span>
-          <a href="#" class="read-more" data-id="${project.id}">En savoir plus &rarr;</a>
+          <button class="read-more-btn" data-id="${project.id}">En savoir plus &rarr;</button>
         </div>
       </div>
     `;
@@ -221,38 +221,42 @@ if (projectsContainer) {
   // Project Modal Logic
   const projectModal = document.getElementById('project-modal');
   const closeProjectModal = document.getElementById('close-project-modal');
-  const modalTitle = document.getElementById('modal-project-title');
-  const modalCategory = document.getElementById('modal-project-category');
-  const modalDate = document.getElementById('modal-project-date');
-  const modalImage = document.getElementById('modal-project-image');
-  const modalDescription = document.getElementById('modal-project-description');
+  const modalProjTitle = document.getElementById('modal-project-title');
+  const modalProjCategory = document.getElementById('modal-project-category');
+  const modalProjDate = document.getElementById('modal-project-date');
+  const modalProjImage = document.getElementById('modal-project-image');
+  const modalProjDescription = document.getElementById('modal-project-description');
 
-  // Open Modal
-  document.querySelectorAll('.read-more').forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
+  projectsContainer.addEventListener('click', (e) => {
+    const btn = e.target.closest('.read-more-btn');
+    if (btn) {
       const projectId = parseInt(btn.getAttribute('data-id'));
       const project = projects.find(p => p.id === projectId);
 
       if (project) {
-        modalTitle.textContent = project.title;
-        modalCategory.textContent = project.category;
-        modalDate.textContent = `📅 ${project.date}`;
-        modalImage.src = project.image;
-        modalDescription.textContent = project.description;
-        projectModal.style.display = 'block';
+        modalProjTitle.textContent = project.title;
+        modalProjCategory.textContent = project.category;
+        modalProjDate.textContent = `📅 ${project.date}`;
+        modalProjImage.src = project.image;
+        modalProjDescription.textContent = project.description;
+        projectModal.classList.add('show');
+        document.body.style.overflow = 'hidden';
       }
-    });
+    }
   });
 
-  // Close Modal
-  closeProjectModal.addEventListener('click', () => {
-    projectModal.style.display = 'none';
-  });
+  const closeProjModal = () => {
+    projectModal.classList.remove('show');
+    document.body.style.overflow = 'auto';
+  };
+
+  if (closeProjectModal) {
+    closeProjectModal.addEventListener('click', closeProjModal);
+  }
 
   window.addEventListener('click', (e) => {
     if (e.target === projectModal) {
-      projectModal.style.display = 'none';
+      closeProjModal();
     }
   });
 }
