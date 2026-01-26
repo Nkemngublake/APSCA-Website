@@ -132,16 +132,25 @@ if (recruitmentModal) {
     }
   });
 
+  // Handle Form Submission
   if (applicationForm) {
     applicationForm.addEventListener('submit', (e) => {
       e.preventDefault();
       const btn = applicationForm.querySelector('button[type="submit"]');
       const originalText = btn.textContent;
+      const formData = new FormData(applicationForm);
+      
       btn.textContent = 'Envoi en cours...';
       btn.disabled = true;
 
+      // In a real production environment, you would use EmailJS, a backend proxy, 
+      // or a service like Formspree to handle the file upload and email sending.
+      // For this static site, we simulate the success and provide the email contact.
+      
       setTimeout(() => {
-        alert('Votre candidature a été envoyée avec succès !');
+        alert('Votre candidature a été préparée. Veuillez également envoyer votre CV directement à : actionpromotion.santeca@gmail.com');
+        window.location.href = `mailto:actionpromotion.santeca@gmail.com?subject=Candidature: ${modalRecruitmentTitle.textContent}&body=Nom: ${formData.get('name')}%0D%0AEmail: ${formData.get('email')}%0D%0ATéléphone: ${formData.get('phone')}%0D%0AMessage: ${formData.get('message')}`;
+        
         applicationForm.reset();
         closeRecModal();
         btn.textContent = originalText;
