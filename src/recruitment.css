@@ -1,63 +1,77 @@
 /* Recruitment Section */
 .recruitment-section {
-    padding: 80px 0;
-    background-color: #f9f9f9;
-}
-
-.section-subtitle {
-    text-align: center;
-    color: #666;
-    margin-bottom: 40px;
-    font-size: 1.2rem;
+    padding: 100px 0;
+    background-color: #ffffff;
 }
 
 .jobs-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
+    grid-template-columns: 1fr;
+    max-width: 900px;
+    margin: 0 auto;
+    gap: 20px;
 }
 
 .job-card {
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    height: 100%;
+    flex-direction: row;
+    align-items: center;
+    padding: 25px 35px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .job-card {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 25px;
+    }
 }
 
 .job-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    background: #ffffff;
+    border-color: var(--primary-color);
+    box-shadow: 0 10px 25px rgba(24, 62, 159, 0.08);
 }
 
 .job-header {
-    margin-bottom: 20px;
+    margin-bottom: 0;
+    flex-grow: 1;
 }
 
 .job-title {
     font-family: var(--font-heading);
-    font-size: 1.5rem;
-    color: var(--secondary-color);
-    margin-bottom: 10px;
+    font-size: 1.25rem;
+    color: #1a2b4b;
+    margin-bottom: 8px;
+    font-weight: 700;
 }
 
 .job-meta {
     display: flex;
-    gap: 15px;
-    font-size: 0.9rem;
-    color: #666;
-    margin-bottom: 15px;
-}
-
-.job-meta span {
-    display: flex;
-    align-items: center;
-    gap: 5px;
+    gap: 20px;
+    font-size: 0.85rem;
+    color: #64748b;
 }
 
 .job-description {
-    margin-bottom: 20px;
-    flex-grow: 1;
+    display: none; /* Hide description in list view for cleaner look */
+}
+
+.apply-btn {
+    margin-left: 20px;
+    white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+    .apply-btn {
+        margin-left: 0;
+        margin-top: 20px;
+        width: 100%;
+    }
 }
 
 /* Modal */
