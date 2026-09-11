@@ -5,37 +5,52 @@
   <meta charset="UTF-8" />
   <link rel="icon" type="image/jpeg" href="/logo.jpeg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>APSCA - Action pour la Promotion de la Santé au Cameroun</title>
+  <meta name="theme-color" content="#0f172a" />
+  <title>APSCA — Action pour la Promotion de la Santé au Cameroun</title>
   <meta name="description"
-    content="APSCA est une association apolitique et laïque œuvrant pour la promotion de la santé et le développement communautaire au Cameroun." />
+    content="APSCA est une ONG apolitique et laïque basée à Yaoundé qui œuvre pour la promotion de la santé publique et le développement des communautés au Cameroun." />
+  <meta name="keywords" content="APSCA, ONG, santé publique, Cameroun, Yaoundé, VIH, tuberculose, paludisme, santé communautaire" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="APSCA — Action pour la Promotion de la Santé au Cameroun" />
+  <meta property="og:description"
+    content="ONG de santé publique au Cameroun. Ensemble, pour la santé des communautés." />
+  <meta property="og:image" content="/logo.png" />
+  <meta property="og:locale" content="fr_FR" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Outfit:wght@500;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="./src/style.css" />
 </head>
 
 <body>
-  <div class="hero-background">
+  <a href="#mission" class="skip-link">Aller au contenu principal</a>
+  <div class="scroll-progress" aria-hidden="true"></div>
+
+  <div class="hero-background" aria-hidden="true">
     <div class="overlay"></div>
-    <img src="/images/hero_final.png" alt="APSCA Field Work - Community Health" />
+    <img src="/images/hero_final.png" alt="" />
   </div>
 
-  <header class="glass-header">
+  <header class="glass-header" id="site-header">
     <div class="container header-content">
-      <a href="#" class="logo">
-        <img src="/logo.jpeg" alt="APSCA Logo" />
+      <a href="#top" class="logo">
+        <img src="/logo.jpeg" alt="Logo APSCA" />
         <span>APSCA</span>
       </a>
-      <nav class="desktop-nav">
-        <a href="#mission">Mission</a>
-        <a href="#objectifs">Objectifs</a>
+      <nav class="desktop-nav" aria-label="Navigation principale">
+        <a href="#mission">À propos</a>
+        <a href="#objectifs">Domaines</a>
         <a href="#projets">Projets</a>
+        <a href="#partenaires">Partenaires</a>
         <a href="#recrutement">Recrutement</a>
-        <a href="#contact" class="btn-primary">Contact</a>
+        <a href="#agir" class="btn-primary btn-sm">Nous soutenir</a>
       </nav>
-      <button class="mobile-menu-btn" aria-label="Menu">
+      <button class="mobile-menu-btn" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobile-nav">
         <span class="bar"></span>
         <span class="bar"></span>
         <span class="bar"></span>
@@ -43,177 +58,387 @@
     </div>
   </header>
 
-  <div class="mobile-nav">
-    <a href="#mission">Mission</a>
-    <a href="#objectifs">Objectifs</a>
+  <div class="mobile-nav" id="mobile-nav">
+    <a href="#mission">À propos</a>
+    <a href="#objectifs">Domaines</a>
     <a href="#projets">Projets</a>
+    <a href="#partenaires">Partenaires</a>
     <a href="#recrutement">Recrutement</a>
-    <a href="#contact">Contact</a>
+    <a href="#agir" class="btn-primary">Nous soutenir</a>
   </div>
 
-  <main>
+  <main id="top">
+    <!-- HERO -->
     <section class="hero">
       <div class="container hero-content">
-        <h1 class="fade-in">Action pour la Promotion de la Santé au Cameroun</h1>
-        <p class="tagline fade-in delay-1">Une association au service des communautés pour un avenir plus sain.</p>
-        <div class="hero-buttons fade-in delay-2">
-          <a href="#mission" class="btn-primary">Découvrir notre mission</a>
-          <a href="#objectifs" class="btn-secondary">Nos Objectifs</a>
+        <span class="eyebrow fade-in">Action pour la Promotion de la Santé au Cameroun</span>
+        <h1 class="fade-in delay-1">Ensemble, pour la santé des&nbsp;communautés camerounaises</h1>
+        <p class="tagline fade-in delay-2">
+          ONG apolitique et laïque basée à Yaoundé, nous appuyons les politiques de santé publique
+          et renforçons le bien-être des populations à travers des actions de terrain fondées sur des
+          données probantes.
+        </p>
+        <div class="hero-buttons fade-in delay-3">
+          <a href="#projets" class="btn-primary btn-lg">Découvrir nos projets</a>
+          <a href="#agir" class="btn-secondary btn-lg">S'engager à nos côtés</a>
         </div>
+        <p class="hero-trust fade-in delay-4">
+          <span class="dot" aria-hidden="true"></span>
+          En appui aux politiques du Ministère de la Santé Publique du Cameroun
+        </p>
       </div>
+      <a href="#impact" class="scroll-cue" aria-label="Défiler vers le bas">
+        <span></span>
+      </a>
     </section>
 
-    <section id="mission" class="mission-section">
+    <!-- IMPACT STATS -->
+    <section id="impact" class="impact-section" aria-label="Notre impact en chiffres">
       <div class="container">
-        <div class="glass-card mission-card fade-in-up">
-          <h2>Notre Mission</h2>
-          <p>
-            <strong>APSCA</strong> (Action pour la Promotion de la Santé au Cameroun) est une Organisation Non
-            Gouvernementale (ONG) apolitique, laïque et à but non lucratif, dont le siège est établi à Yaoundé.
-          </p>
-          <p>
-            Notre mission fondamentale est d'appuyer les politiques de santé publique du Gouvernement camerounais. Nous
-            œuvrons pour l'amélioration durable des indicateurs de santé et le renforcement du bien-être des communautés
-            locales à travers des interventions ciblées et fondées sur des données probantes.
-          </p>
+        <div class="impact-grid">
+          <div class="stat">
+            <span class="stat-number" data-target="50000" data-suffix="+">0</span>
+            <span class="stat-label">Personnes sensibilisées</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number" data-target="200" data-suffix="+">0</span>
+            <span class="stat-label">Villages accompagnés</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number" data-target="200">0</span>
+            <span class="stat-label">Agents de santé formés</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number" data-target="95" data-suffix="%">0</span>
+            <span class="stat-label">Réussite thérapeutique (TB)</span>
+          </div>
         </div>
       </div>
     </section>
 
+    <!-- MISSION / ABOUT -->
+    <section id="mission" class="mission-section">
+      <div class="container mission-layout">
+        <div class="mission-copy fade-in-up">
+          <span class="section-eyebrow">Qui sommes-nous</span>
+          <h2 class="section-title-left">Une ONG au service de la santé publique</h2>
+          <p>
+            <strong>APSCA</strong> (Action pour la Promotion de la Santé au Cameroun) est une Organisation
+            Non Gouvernementale apolitique, laïque et à but non lucratif, dont le siège est établi à Yaoundé.
+          </p>
+          <p>
+            Notre mission fondamentale est d'appuyer les politiques de santé publique du Gouvernement
+            camerounais. Nous œuvrons pour l'amélioration durable des indicateurs de santé et le renforcement
+            du bien-être des communautés locales à travers des interventions ciblées et fondées sur des
+            données probantes.
+          </p>
+          <ul class="value-chips">
+            <li>Apolitique &amp; laïque</li>
+            <li>À but non lucratif</li>
+            <li>Approche communautaire</li>
+            <li>Fondée sur les données</li>
+          </ul>
+        </div>
+        <aside class="mission-facts fade-in-up delay-1" aria-label="Informations clés">
+          <div class="fact">
+            <span class="fact-label">Siège social</span>
+            <span class="fact-value">Yaoundé, Cameroun</span>
+          </div>
+          <div class="fact">
+            <span class="fact-label">Statut</span>
+            <span class="fact-value">ONG à but non lucratif</span>
+          </div>
+          <div class="fact">
+            <span class="fact-label">Champs d'action</span>
+            <span class="fact-value">VIH · Tuberculose · Paludisme · SMI</span>
+          </div>
+          <div class="fact">
+            <span class="fact-label">Approche</span>
+            <span class="fact-value">Santé dirigée par la communauté</span>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- DOMAINS / OBJECTIVES -->
     <section id="objectifs" class="objectives-section">
       <div class="container">
-        <h2 class="section-title fade-in-up">Nos Objectifs Stratégiques</h2>
+        <span class="section-eyebrow center fade-in-up">Nos domaines d'intervention</span>
+        <h2 class="section-title fade-in-up">Sept leviers pour un impact durable</h2>
+        <p class="section-subtitle fade-in-up delay-1">
+          Nous combinons expertise technique et ancrage communautaire pour renforcer durablement le système de santé.
+        </p>
         <div class="objectives-grid">
-          <div class="glass-card objective-card fade-in-up delay-1">
-            <div class="icon">🏥</div>
-            <h3>Renforcement des Systèmes de Santé</h3>
-            <p>Consolider les infrastructures sanitaires et optimiser les systèmes communautaires pour une résilience
-              accrue.</p>
-          </div>
-          <div class="glass-card objective-card fade-in-up delay-2">
-            <div class="icon">📢</div>
-            <h3>Promotion de la Santé Publique</h3>
-            <p>Stimuler la demande et l'accès aux services essentiels (VIH, Tuberculose, Paludisme, Santé Maternelle et
-              Infantile).</p>
-          </div>
-          <div class="glass-card objective-card fade-in-up delay-3">
-            <div class="icon">🛠️</div>
-            <h3>Expertise Technique</h3>
-            <p>Fournir une assistance technique de pointe pour le développement d'outils stratégiques et la gestion des
-              données sanitaires.</p>
-          </div>
-          <div class="glass-card objective-card fade-in-up delay-4">
-            <div class="icon">📊</div>
-            <h3>Gestion de Projets</h3>
+          <article class="objective-card fade-in-up">
+            <div class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6M10 9h.01M14 9h.01"/></svg>
+            </div>
+            <h3>Renforcement des systèmes de santé</h3>
+            <p>Consolider les infrastructures sanitaires et optimiser les systèmes communautaires pour une résilience accrue.</p>
+          </article>
+          <article class="objective-card fade-in-up delay-1">
+            <div class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg>
+            </div>
+            <h3>Promotion de la santé publique</h3>
+            <p>Stimuler la demande et l'accès aux services essentiels : VIH, tuberculose, paludisme, santé maternelle et infantile.</p>
+          </article>
+          <article class="objective-card fade-in-up delay-2">
+            <div class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2-2 2.5-2.5z"/></svg>
+            </div>
+            <h3>Expertise technique</h3>
+            <p>Fournir une assistance technique de pointe pour le développement d'outils stratégiques et la gestion des données sanitaires.</p>
+          </article>
+          <article class="objective-card fade-in-up delay-3">
+            <div class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15l3-4 3 3 5-6"/></svg>
+            </div>
+            <h3>Gestion de projets</h3>
             <p>Concevoir, implémenter et évaluer des programmes de santé publique à fort impact social.</p>
-          </div>
-          <div class="glass-card objective-card fade-in-up delay-1">
-            <div class="icon">🎓</div>
-            <h3>Renforcement des Capacités</h3>
-            <p>Assurer la formation continue, le mentorat et la supervision formative des personnels de santé et agents
-              communautaires.</p>
-          </div>
-          <div class="glass-card objective-card fade-in-up delay-2">
-            <div class="icon">🤝</div>
-            <h3>Partenariats Stratégiques</h3>
-            <p>Tisser des alliances solides avec les institutions gouvernementales, les bailleurs internationaux et la
-              société civile.</p>
-          </div>
-          <div class="glass-card objective-card fade-in-up delay-3">
-            <div class="icon">🗣️</div>
-            <h3>Engagement Communautaire</h3>
+          </article>
+          <article class="objective-card fade-in-up delay-1">
+            <div class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 3 6 3s6-2 6-3v-5"/></svg>
+            </div>
+            <h3>Renforcement des capacités</h3>
+            <p>Assurer la formation continue, le mentorat et la supervision formative des personnels de santé et agents communautaires.</p>
+          </article>
+          <article class="objective-card fade-in-up delay-2">
+            <div class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 11a4 4 0 1 0-4-4"/><path d="M8 13a4 4 0 1 0 4 4"/><path d="M12 7a4 4 0 0 1 4 4M12 17a4 4 0 0 1-4-4"/></svg>
+            </div>
+            <h3>Partenariats stratégiques</h3>
+            <p>Tisser des alliances solides avec les institutions gouvernementales, les bailleurs internationaux et la société civile.</p>
+          </article>
+          <article class="objective-card fade-in-up delay-3">
+            <div class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10z"/></svg>
+            </div>
+            <h3>Engagement communautaire</h3>
             <p>Garantir une participation active et inclusive des communautés dans la gouvernance de la santé.</p>
-          </div>
+          </article>
         </div>
       </div>
     </section>
+
+    <!-- PROJECTS -->
     <section id="projets" class="projects-section">
       <div class="container">
-        <h2 class="section-title fade-in-up">Nos Projets Réalisés</h2>
-        <p class="section-subtitle fade-in-up delay-1">Un aperçu de notre impact sur le terrain.</p>
+        <span class="section-eyebrow center fade-in-up">Notre action sur le terrain</span>
+        <h2 class="section-title fade-in-up">Nos projets phares</h2>
+        <p class="section-subtitle fade-in-up delay-1">Un aperçu concret de notre impact auprès des communautés.</p>
         <div id="projects-grid" class="projects-grid">
-          <!-- Projects will be injected here -->
+          <!-- Projects injected by JS -->
         </div>
       </div>
     </section>
 
+    <!-- PARTNERS -->
+    <section id="partenaires" class="partners-section">
+      <div class="container">
+        <span class="section-eyebrow center fade-in-up">Ils nous font confiance</span>
+        <h2 class="section-title fade-in-up">Nos partenaires</h2>
+        <p class="section-subtitle fade-in-up delay-1">
+          Nous agissons aux côtés d'institutions publiques, de bailleurs internationaux et de la société civile.
+        </p>
+        <div class="partners-grid fade-in-up delay-2">
+          <div class="partner-card">Ministère de la Santé Publique</div>
+          <div class="partner-card">Fonds Mondial</div>
+          <div class="partner-card">ONUSIDA</div>
+          <div class="partner-card">OMS</div>
+          <div class="partner-card">Districts de Santé</div>
+          <div class="partner-card">Société Civile</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GET INVOLVED CTA -->
+    <section id="agir" class="engage-section">
+      <div class="container">
+        <div class="engage-inner">
+          <div class="engage-head fade-in-up">
+            <span class="section-eyebrow light center">Passez à l'action</span>
+            <h2>Rejoignez le mouvement pour la santé communautaire</h2>
+            <p>Votre engagement, sous toutes ses formes, transforme des vies au sein des communautés camerounaises.</p>
+          </div>
+          <div class="engage-grid">
+            <article class="engage-card fade-in-up">
+              <div class="engage-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              </div>
+              <h3>Devenir bénévole</h3>
+              <p>Mettez vos compétences au service de nos actions de terrain et de nos campagnes de sensibilisation.</p>
+              <a href="#recrutement" class="link-arrow">Voir les opportunités <span aria-hidden="true">&rarr;</span></a>
+            </article>
+            <article class="engage-card fade-in-up delay-1">
+              <div class="engage-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21l7.8-7.5 1-1.1a5.5 5.5 0 0 0 0-7.8z"/></svg>
+              </div>
+              <h3>Nous soutenir</h3>
+              <p>Contribuez au financement de nos programmes de santé et amplifiez notre impact sur le long terme.</p>
+              <a href="mailto:actionpromotion.santeca@gmail.com?subject=Soutenir%20APSCA" class="link-arrow">Nous écrire <span aria-hidden="true">&rarr;</span></a>
+            </article>
+            <article class="engage-card fade-in-up delay-2">
+              <div class="engage-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 11a4 4 0 1 0-4-4"/><path d="M8 13a4 4 0 1 0 4 4"/><path d="M12 7a4 4 0 0 1 4 4M12 17a4 4 0 0 1-4-4"/></svg>
+              </div>
+              <h3>Devenir partenaire</h3>
+              <p>Institutions, bailleurs et organisations : construisons ensemble des programmes à fort impact.</p>
+              <a href="mailto:actionpromotion.santeca@gmail.com?subject=Partenariat%20APSCA" class="link-arrow">Établir un partenariat <span aria-hidden="true">&rarr;</span></a>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RECRUITMENT -->
     <section id="recrutement" class="recruitment-section">
       <div class="container">
-        <h2 class="section-title fade-in-up">Rejoignez Notre Équipe</h2>
-        <p class="section-subtitle fade-in-up delay-1">Contribuez à notre mission et faites la différence.</p>
+        <span class="section-eyebrow center fade-in-up">Carrières</span>
+        <h2 class="section-title fade-in-up">Rejoignez notre équipe</h2>
+        <p class="section-subtitle fade-in-up delay-1">Contribuez à notre mission et faites la différence sur le terrain.</p>
 
         <div class="recruitment-info fade-in-up delay-2">
-            <p>Vous pouvez également envoyer votre candidature spontanée avec CV et lettre de motivation directement à : <br>
-            <a href="mailto:actionpromotion.santeca@gmail.com">actionpromotion.santeca@gmail.com</a></p>
+          <p>Vous ne trouvez pas d'offre correspondante ? Envoyez votre candidature spontanée (CV + lettre de motivation) à :
+            <br>
+            <a href="mailto:actionpromotion.santeca@gmail.com">actionpromotion.santeca@gmail.com</a>
+          </p>
         </div>
 
         <div id="job-listings" class="jobs-grid">
-          <!-- Job cards will be injected here by JS -->
+          <!-- Job cards injected by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact-section">
+      <div class="container">
+        <span class="section-eyebrow center fade-in-up">Contact</span>
+        <h2 class="section-title fade-in-up">Échangeons ensemble</h2>
+        <p class="section-subtitle fade-in-up delay-1">Une question, un projet, un partenariat ? Nous sommes à votre écoute.</p>
+        <div class="contact-grid">
+          <a class="contact-card fade-in-up" href="mailto:actionpromotion.santeca@gmail.com">
+            <div class="contact-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+            </div>
+            <h3>Email</h3>
+            <span>actionpromotion.santeca@gmail.com</span>
+          </a>
+          <div class="contact-card fade-in-up delay-1">
+            <div class="contact-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <h3>Siège</h3>
+            <span>Yaoundé, Cameroun</span>
+          </div>
+          <div class="contact-card fade-in-up delay-2">
+            <div class="contact-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            </div>
+            <h3>Horaires</h3>
+            <span>Lun – Ven · 08h – 17h</span>
+          </div>
         </div>
       </div>
     </section>
   </main>
 
   <!-- Application Modal -->
-  <div id="application-modal" class="modal">
+  <div id="application-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-job-title">
     <div class="modal-content glass-card">
-      <span class="close-modal">&times;</span>
+      <button class="close-modal" aria-label="Fermer">&times;</button>
       <h2 id="modal-job-title">Postuler</h2>
       <form id="application-form">
         <div class="form-group">
           <label for="name">Nom complet</label>
-          <input type="text" id="name" required placeholder="Votre nom">
+          <input type="text" id="name" name="name" required placeholder="Votre nom">
         </div>
         <div class="form-group">
           <label for="email">Email</label>
-          <input type="email" id="email" required placeholder="votre@email.com">
+          <input type="email" id="email" name="email" required placeholder="votre@email.com">
         </div>
         <div class="form-group">
           <label for="phone">Téléphone</label>
-          <input type="tel" id="phone" required placeholder="+237 ...">
+          <input type="tel" id="phone" name="phone" required placeholder="+237 ...">
         </div>
         <div class="form-group">
           <label for="cv">CV (PDF)</label>
-          <input type="file" id="cv" accept=".pdf" required>
+          <input type="file" id="cv" name="cv" accept=".pdf" required>
         </div>
         <div class="form-group">
-          <label for="message">Message (Optionnel)</label>
-          <textarea id="message" rows="3" placeholder="Pourquoi vous ?"></textarea>
+          <label for="message">Message (optionnel)</label>
+          <textarea id="message" name="message" rows="3" placeholder="Pourquoi vous ?"></textarea>
         </div>
-        <button type="submit" class="btn-primary">Envoyer ma candidature</button>
+        <button type="submit" class="btn-primary btn-block">Envoyer ma candidature</button>
       </form>
     </div>
   </div>
 
   <!-- Project Details Modal -->
-  <div id="project-modal" class="modal">
+  <div id="project-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-project-title">
     <div class="modal-content glass-card project-modal-content">
-      <span class="close-modal" id="close-project-modal">&times;</span>
+      <button class="close-modal" id="close-project-modal" aria-label="Fermer">&times;</button>
       <div class="project-modal-header">
         <span id="modal-project-category" class="project-category"></span>
         <h2 id="modal-project-title"></h2>
         <span id="modal-project-date" class="project-date"></span>
       </div>
       <div class="project-modal-body">
-        <img id="modal-project-image" src="" alt="Project Image" class="modal-project-img">
+        <img id="modal-project-image" src="" alt="" class="modal-project-img">
         <p id="modal-project-description" class="project-description"></p>
       </div>
     </div>
   </div>
 
-  <footer id="contact">
-    <div class="container footer-content">
-      <div class="footer-logo">
-        <h3>APSCA</h3>
-        <p>Yaoundé, Cameroun</p>
+  <footer class="site-footer">
+    <div class="container footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <img src="/logo.jpeg" alt="Logo APSCA" />
+          <span>APSCA</span>
+        </div>
+        <p>Action pour la Promotion de la Santé au Cameroun. Une ONG apolitique et laïque au service des communautés.</p>
+        <div class="footer-social" aria-label="Réseaux sociaux">
+          <a href="mailto:actionpromotion.santeca@gmail.com" aria-label="Email">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+          </a>
+          <a href="#" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="#" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+        </div>
       </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <a href="#mission">À propos</a>
+        <a href="#objectifs">Domaines</a>
+        <a href="#projets">Projets</a>
+        <a href="#partenaires">Partenaires</a>
+      </div>
+      <div class="footer-col">
+        <h4>S'engager</h4>
+        <a href="#recrutement">Recrutement</a>
+        <a href="#agir">Nous soutenir</a>
+        <a href="mailto:actionpromotion.santeca@gmail.com?subject=Partenariat%20APSCA">Devenir partenaire</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="mailto:actionpromotion.santeca@gmail.com">actionpromotion.santeca@gmail.com</a>
+        <span>Yaoundé, Cameroun</span>
+        <span>Lun – Ven · 08h – 17h</span>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <span class="copyright">&copy; <span id="year">2025</span> APSCA. Tous droits réservés.</span>
       <div class="footer-links">
-        <a href="#">Mentions Légales</a>
+        <a href="#">Mentions légales</a>
         <a href="#">Confidentialité</a>
       </div>
-      <div class="copyright">
-        &copy; 2025 APSCA. Tous droits réservés.
-      </div>
+      <a href="#top" class="back-to-top">Haut de page <span aria-hidden="true">&uarr;</span></a>
     </div>
   </footer>
 
