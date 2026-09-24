@@ -378,15 +378,24 @@
 
   <!-- Project Details Modal -->
   <div id="project-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-project-title">
-    <div class="modal-content glass-card project-modal-content">
+    <div class="modal-content project-modal-content">
       <button class="close-modal" id="close-project-modal" aria-label="Fermer">&times;</button>
-      <div class="project-modal-header">
-        <span id="modal-project-category" class="project-category"></span>
-        <h2 id="modal-project-title"></h2>
-        <span id="modal-project-date" class="project-date"></span>
+      <div class="project-gallery">
+        <div class="project-gallery-main">
+          <img id="modal-project-image" src="" alt="" class="modal-project-img">
+          <span id="modal-project-caption" class="gallery-caption"></span>
+        </div>
+        <div id="modal-project-thumbs" class="project-gallery-thumbs" role="tablist" aria-label="Galerie photos du projet"></div>
       </div>
       <div class="project-modal-body">
-        <img id="modal-project-image" src="" alt="" class="modal-project-img">
+        <span id="modal-project-category" class="project-category"></span>
+        <h2 id="modal-project-title"></h2>
+        <div class="project-modal-meta">
+          <span id="modal-project-date"></span>
+          <span id="modal-project-location"></span>
+          <span id="modal-project-partner"></span>
+        </div>
+        <div id="modal-project-highlights" class="project-highlights"></div>
         <p id="modal-project-description" class="project-description"></p>
       </div>
     </div>
